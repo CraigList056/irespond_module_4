@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <title>iRespond</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+
+  </head>
+  <body>
+
+    <body>
+
+        <div class="container" id="container">
+
+            <!-- Map view -->
+            <div class="map" id="map">
+                
+
+            </div>
+
+            <!-- Side menu -->
+            <div class="sideMenu" id="sideMenu">
+                <!-- Menu title -->
+                <br>
+                <img src="static/icons/EQRT-Banner.png" style="width:100%;height:auto;" />
+                <h1>iRESPOND</h1>
+               
+
+                <!-- Markers List -->
+                <div class="boxContainer" id="markersListContainer">
+                    <span>Image Upload</span>
+                    <form action="/predict" method="post", enctype="multipart/form-data">
+                        <span>
+                            <input style='width:100%' , type="file", name = "file"/>
+                        </span>
+                        <p style="text-align:right">
+                            <button>Upload</button>
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Paths List -->
+                <div class="boxContainer" id="markersListContainer">
+                    <span>Image Link</span>
+                    <form action="/predict" method="post", enctype="multipart/form-data">   
+                        <input style='width:100%' , type="text", maxlength="1000", name = "link" placeholder="Paste the image URL here."/>
+                        <div style="text-align:right;"><span style="font-size:8pt;">Note: not the site address.</span></div>
+                        <p style="text-align:right">
+                            <button>Proceed</button>
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Input Start/End Vertex -->
+                <div class="boxContainer" id="pathsListContainer">
+                    <p style = "text-align: center; color: red">{{error}}</p>
+                    <img src="{{ user_image }}" alt="User Image" style="width:250px;height:auto;border:3px double white;">
+                    <span>
+                        <br><mark style="background-color:#04aa6d;color:white;">{{label}}</mark>
+                        <br>Probability : {{prob}} %
+                    </span>
+                </div>
+                <!-- Input Start/End Vertex 
+                <p style="text-align:center;"><a href="{{ url_for('start') }}"><mark style="background-color:blue;color:white;">Shortest Path</mark></a></p>                
+-->
+                <!-- Submit Button -->
+                
+            </div>
+
+        </div>
+
+       
+    
+
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/index.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<xxxxxxx>&callback=initMap"></script>
+  </body>
+</html>

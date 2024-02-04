@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <title>iRespond</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+
+  </head>
+  <body>
+
+    <body>
+
+        <div class="container" id="container">
+
+            <!-- Map view -->
+            <div class="map" id="map"></div>
+            
+            <!-- Side menu -->
+            <div class="sideMenu" id="sideMenu">
+                <!-- Menu title -->
+                <br>
+                <img src="static/icons/EQRT-Banner.png" style="width:100%;height:auto;" />
+                <h1>iRESPOND</h1>
+
+                <!-- Markers List -->
+                <div class="boxContainer" id="markersListContainer">
+                    <span>Emergency Location</span>
+                    <ul class="pathList" id="markerList">   
+                    </ul>
+                </div>                
+                
+                <!-- Directions List -->
+                <div class="boxContainer" id="directionsListContainer">
+                    <span>Emergency Location</span>
+                    <ul class="pathList" id="directions-panel">   
+                    </ul>
+                </div>
+
+                <!-- Paths List -->
+                <div class="boxContainer" id="pathsListContainer">
+                    <span>Path Lists</span>
+
+                    <ul class="pathList" id="pathList">   
+                    </ul>
+
+                </div>
+
+                <!-- Input Start/End Vertex -->
+                <div class="boxContainer" id="optionContainer">
+                    <div class="flexContainer" id="selectContainer">
+                        <div class="selectContainer" id="startContainer">
+                            <span>Origin</span>
+                            <select class="select" id="startSelect">
+                            </select>
+                        </div>
+                        <div class="selectContainer" id="endContainer">
+                            <span>Destination</span>
+                            <select class="select" id="endSelect">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- Input Start/End Vertex -->
+                <div class="boxContainer" id="optionContainer">
+                    <span>Route</span>
+                    <div class="flexContainer" id="selectContainer">
+
+                        <div class="selectContainer" id="startContainer">
+                            <span>
+                                <ul>
+                                <li><input type="radio" name="test" id="cb1" checked/>
+                                  <label for="cb1"><img src="static/icons/ambulance.png" style="width:40px;height:40px;"/></label>
+                                </li>
+                                </ul>
+                            </span>
+                        </div>
+                        <div class="selectContainer" id="endContainer">
+                            <span>
+                                <ul>
+                                <li><input type="radio" name="test" id="cb2" />
+                                  <label for="cb2"><img src="static/icons/helicopter.png" style="width:40px;height:40px;"/></label>
+                                </li>
+                                </ul>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="submitContainer" id="submitContainer">
+                    <button class="submitButton" id="submitButton">
+                        Find Shortest Path
+                    </button>
+                    <br><p id="resetButton"><mark style="background-color:red;color:white;">RESET</mark></p>
+                    <p><a href="{{ url_for('cnn_model') }}"><mark style="background-color:blue;color:white;">Image Classification</mark></a></p>
+                </div>
+            </div>
+        </div>
+        <div class='toastBox' style='display:none'></div>
+    
+
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/index.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<xxxxxxxx>&callback=initMap"></script>
+  </body>
+</html>
